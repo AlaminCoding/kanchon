@@ -3,22 +3,22 @@ import localFont from "next/font/local";
 export const RebondFont = localFont({
   src: [
     {
-      path: "../assets/fonts/Rebond-bold.otf",
+      path: "../assets/fonts/rebond-bold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Rebond-semibold.otf",
+      path: "../assets/fonts/rebond-semibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Rebond-medium.otf",
+      path: "../assets/fonts/rebond-medium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../assets/fonts/Rebond-regular.otf",
+      path: "../assets/fonts/rebond-regular.otf",
       weight: "400",
       style: "normal",
     },
