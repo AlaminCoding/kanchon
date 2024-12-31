@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${RebondFont.variable} ${SourceSansFont.variable} bg-mirage`}
+        className={`${RebondFont.variable} ${SourceSansFont.variable} bg-black`}
       >
         {children}
       </body>

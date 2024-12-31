@@ -22,6 +22,11 @@ export const RebondFont = localFont({
       weight: "400",
       style: "normal",
     },
+    {
+      path: "../assets/fonts/rebond-thin.otf",
+      weight: "100",
+      style: "normal",
+    },
   ],
   variable: "--font-rebond",
 });
