@@ -23,7 +23,7 @@ export const ProjectList = [
     id: 1,
     icon: OtherLogo,
     title: "Othership",
-    subtitle: "Workplace sharing for office/remote, coworking.",
+    subtitle: "Workplace sharing for office/ remote, coworking.",
     description:
       "OTHERSHIP, a transformative project, emerged to streamline modern work environments amidst the shift to hybrid work models. This mobile app and web platform aimed to empower employees.",
     image: OtherShip,

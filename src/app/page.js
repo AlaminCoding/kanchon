@@ -3,17 +3,15 @@ import Header from "../components/homepage/Header";
 import Methodology from "../components/homepage/Methodology";
 import OtherProjects from "../components/homepage/OtherProjects";
 import Projects from "../components/homepage/Projects";
-import Wave from "../components/homepage/wave";
 import SidebarInfo from "../components/SidebarInfo";
 
 export default function Home() {
   return (
     <main>
-      <section className="pb-[190px] flex items-start">
+      <section className="flex items-start gap-5 border-[0.5px] border-white/20">
         <SidebarInfo />
-        <div className="flex-1 pt-[160px] relative overflow-hidden">
-          <Wave />
-          <div className="max-w-[810px] mx-auto">
+        <div className="flex-1 py-[100px] relative overflow-hidden border-l-[0.5px] border-white/20">
+          <div className="max-w-[900px] mx-auto">
             <Header />
             <Methodology />
             <Projects />
