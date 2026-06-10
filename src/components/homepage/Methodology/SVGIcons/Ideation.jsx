@@ -8,7 +8,7 @@ const Ideation = () => {
         backgroundImage: "linear-gradient(135deg, #FA566E 0%, #FA2A40 100%)",
       }}
     >
-      <Title title="Ideation" />
+      <Title title="2. Ideation" />
       <svg
         width="49"
         height="66"

@@ -1,46 +1,73 @@
-import StarCineplex from "@/assets/images/star-cineplex.svg";
-import OtherShip from "@/assets/images/othership.svg";
-import CashBaba from "@/assets/images/cashbaba.svg";
-
-import StarLogo from "@/assets/images/star-logo.svg";
-import OtherLogo from "@/assets/images/other-logo.svg";
-import CashLogo from "@/assets/images/cash-logo.svg";
-
-export const ProjectList = [
+export const WorkList = [
   {
-    id: 0,
-    icon: StarLogo,
-    title: "Star Cineplex",
-    subtitle: "Online movie ticket booking system",
-    description:
-      "Bangladesh's premier multiplex cinema, offers a seamless movie-going experience. Services include ticket booking, show schedules, food ordering, customer support, and digital gifting.",
-    image: StarCineplex,
-    case_study_link: "/",
-    bgColor: "#904FFD",
-    textColor: "white",
+    id: "fundednext",
+    idx: "01",
+    client: "FundedNext · NextVentures",
+    industry: "Prop trading · Fintech",
+    title: "Scaling a prop-trading platform past its next order of magnitude",
+    role: "UX Lead",
+    year: "2024 →",
+    period: "Ongoing",
+    tags: ["Design System", "Revenue UX", "Dashboard"],
+    caseUrl: null,
+    outcome:
+      "Rebuilt purchase funnel & dashboard; established the system that unblocked a 12-person product org.",
+    metric: {
+      value: "Revenue growth",
+      label: "Measurable lift on rebuilt funnel",
+    },
+    image: "/app-mockup.png",
   },
   {
-    id: 1,
-    icon: OtherLogo,
-    title: "Othership",
-    subtitle: "Workplace sharing for office/ remote, coworking.",
-    description:
-      "OTHERSHIP, a transformative project, emerged to streamline modern work environments amidst the shift to hybrid work models. This mobile app and web platform aimed to empower employees.",
-    image: OtherShip,
-    case_study_link: "/case-study/othership",
-    bgColor: "#B7FF88",
-    textColor: "black",
+    id: "starcineplex",
+    idx: "02",
+    client: "Star Cineplex",
+    industry: "Ticketing · Consumer",
+    title:
+      "A cinema booking experience that finally fits the way people decide",
+    role: "Product Designer",
+    year: "2022",
+    period: "6 months",
+    tags: ["Consumer app", "Booking UX", "iOS + Android"],
+    caseUrl: null,
+    outcome:
+      "Re-architected discovery-to-seat-select in three screens. Made showtimes legible, seat maps native, and payment a decision, not a form.",
+    metric: { value: "3 screens", label: "From browse to booked" },
+    image: "/app-mockup.png",
   },
   {
-    id: 2,
-    icon: CashLogo,
-    title: "CashBaba",
-    subtitle: "eWallet revolutionizes cashless & cardless transactions",
-    description:
-      "CashBaba e-wallet revolutionizes cashless and cardless transactions, offering seamless management of bank accounts and cards.",
-    image: CashBaba,
-    case_study_link: "/",
-    bgColor: "#0094FE",
-    textColor: "white",
+    id: "othership",
+    idx: "03",
+    client: "Othership",
+    industry: "SaaS · Hybrid work",
+    title: "Giving hybrid teams a shared place to work, anywhere",
+    role: "Product Designer",
+    year: "2021",
+    period: "18 months",
+    tags: ["SaaS", "Marketplace", "Mobile + Web"],
+    caseUrl: "/case-study/othership",
+    outcome:
+      "Designed the core booking and team coordination flows now used across multiple global markets. Reduced discovery-to-confirmed-desk to three taps.",
+    metric: { value: "3 taps", label: "To a confirmed booking" },
+    image: "/app-mockup.png",
+  },
+  {
+    id: "banking",
+    idx: "04",
+    client: "Basic Bank · NRB Bank",
+    industry: "Retail banking",
+    title: "Sustainable banking for customers who inherit paper habits",
+    role: "Sr. UX Designer",
+    year: "2021",
+    period: "One year",
+    tags: ["Banking", "Research", "Accessibility"],
+    caseUrl: null,
+    outcome:
+      "Redesigned account opening, transfers, and statements for two national banks. Worked within regulatory constraints to ship interfaces that read the same on a feature phone as on a flagship.",
+    metric: {
+      value: "2 banks",
+      label: "Shipped against regulatory constraint",
+    },
+    image: "/app-mockup.png",
   },
 ];

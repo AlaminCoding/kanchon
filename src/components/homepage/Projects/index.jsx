@@ -1,13 +1,16 @@
-import SectionTitle from "../../common/SectionTitle";
-import { ProjectList } from "./project.data";
-import ProjectCard from "./ProjectCard";
+import ProjectHeader from "./project-header";
+import { WorkList } from "./project.data";
+import WorkCard from "./WorkCard";
 
 const Projects = () => {
   return (
-    <section className="mt-[80px]">
-      {ProjectList.map((project) => {
-        return <ProjectCard key={project.id} project={project} />;
-      })}
+    <section className="pt-[120px]" id="case-studies">
+      <ProjectHeader />
+      <div className="mt-[80px]">
+        {WorkList.map((item) => {
+          return <WorkCard key={item.id} item={item} />;
+        })}
+      </div>
     </section>
   );
 };

@@ -1,6 +1,12 @@
 import "./globals.css";
 import { RebondFont, SourceSansFont } from "@/utils/fontSources";
-import { Plus_Jakarta_Sans, Meow_Script } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Meow_Script,
+  JetBrains_Mono,
+  Inter_Tight,
+  Instrument_Serif,
+} from "next/font/google";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,11 +24,28 @@ const MeowFont = Meow_Script({
   variable: "--font-meow",
 });
 
+const JetBrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+});
+
+const InterTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+});
+
+const Instrument = Instrument_Serif({
+  subsets: ["latin"],
+  style: "italic",
+  weight: ["400"],
+  variable: "--font-instrument-serif",
+});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${RebondFont.variable} ${SourceSansFont.variable} ${JakartaSansFont.variable} ${MeowFont.variable} bg-black`}
+        className={`${RebondFont.variable} ${SourceSansFont.variable} ${JakartaSansFont.variable} ${MeowFont.variable} ${JetBrains.variable} ${InterTight.variable} ${Instrument.variable}`}
       >
         {children}
       </body>

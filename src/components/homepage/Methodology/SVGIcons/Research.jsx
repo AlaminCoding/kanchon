@@ -8,7 +8,7 @@ const Research = () => {
         backgroundImage: "linear-gradient(135deg, #25C4FC 0%, #1C71EE 100%)",
       }}
     >
-      <Title title="Research" />
+      <Title title="3. Research" />
       <svg
         width="76"
         height="45"

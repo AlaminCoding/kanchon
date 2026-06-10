@@ -1,15 +1,22 @@
-import SectionTitle from "../../common/SectionTitle";
-import OtherProjectCard from "./OtherProjectCard";
-import { OtherProjectsData } from "./otherProjects.data";
+import SectionLeftTitle from "@/components/common/SectionLeftTitle";
+import ArchiveCard from "./ArchiveCard";
+import { ArchiveList } from "./otherProjects.data";
 
 const OtherProjects = () => {
   return (
-    <section className="mt-[80px]">
-      <SectionTitle title={"MY OTHER PROJECTS I WORKED ON"} />
-      <div className="grid grid-cols-3 gap-[10px] mt-[40px]">
-        {OtherProjectsData.map((project) => {
-          return <OtherProjectCard key={project.id} project={project} />;
-        })}
+    <section className="py-[120px]" id="other-projects">
+      <div className="flex items-start">
+        <SectionLeftTitle title="Other Projects" />
+        <div className="flex-1 grid grid-cols-3 max-[820px]:grid-cols-2 max-[560px]:grid-cols-1 border border-white/10">
+          {ArchiveList.map((project, index) => (
+            <ArchiveCard
+              key={project.title}
+              project={project}
+              index={index}
+              total={ArchiveList.length}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ const Test = () => {
           "linear-gradient(146.23deg, #AD39F5 13.99%, #8423E5 87.82%)",
       }}
     >
-      <Title title="Test" />
+      <Title title="5. Test" />
       <svg
         width="52"
         height="54"

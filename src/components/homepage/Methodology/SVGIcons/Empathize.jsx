@@ -3,7 +3,7 @@ import Title from "./Title";
 const Empathize = () => {
   return (
     <div className="w-[110px] h-[110px] bg-white rounded-full group hover:w-[130px] transition-all duration-500 hover:shadow-empathize relative">
-      <Title title="Empathize" />
+      <Title title="1. Empathize" />
       <svg
         width="110"
         height="110"

@@ -69,6 +69,9 @@ module.exports = {
         rebond: "var(--font-rebond)",
         jakarta: "var(--font-jakarta-sans)",
         meow: "var(--font-meow)",
+        jetbrains: "var(--font-jetbrains)",
+        interTight: "var(--font-inter-tight)",
+        instrument: "var(--font-instrument-serif)",
       },
       boxShadow: {
         empathize: "0px 10px 10px 0px #D800DA33",
@@ -81,6 +84,26 @@ module.exports = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "scale-pulse": {
+          "0%, 100%": { transform: "scale(0.5)" },
+          "50%": { transform: "scale(1)" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "marquee-screens": {
+          from: { transform: "translate3d(0,0,0)" },
+          // -50% minus half the 36px gap between the two sets, for a seamless loop
+          to: { transform: "translate3d(calc(-50% - 18px),0,0)" },
+        },
+      },
+      animation: {
+        "scale-pulse": "scale-pulse 1.5s ease-in-out infinite",
+        marquee: "marquee 42s linear infinite",
+        "marquee-screens": "marquee-screens 50s linear infinite",
       },
     },
   },

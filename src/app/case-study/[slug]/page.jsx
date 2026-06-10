@@ -1,17 +1,45 @@
-import CaseHeader from "@/components/case-study/header";
-import Link from "next/link";
-import { AiOutlineClose } from "react-icons/ai";
-const CaseStudyDetails = () => {
+import { notFound } from "next/navigation";
+import BackBar from "@/components/case-study/back-bar";
+import { CaseStudies } from "@/components/case-study/case-study.data";
+import CaseFeatures from "@/components/case-study/features";
+import CaseFooter from "@/components/case-study/footer";
+import CaseHero from "@/components/case-study/hero";
+import InfoStrip from "@/components/case-study/info-strip";
+import CaseMetrics from "@/components/case-study/metrics";
+import CaseProcess from "@/components/case-study/process";
+import ScreensMarquee from "@/components/case-study/screens-marquee";
+
+export function generateStaticParams() {
+  return Object.keys(CaseStudies).map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const caseStudy = CaseStudies[slug];
+  if (!caseStudy) return {};
+  return {
+    title: `${caseStudy.hero.title} — UX Case Study`,
+    description: caseStudy.hero.overview,
+  };
+}
+
+const CaseStudyPage = async ({ params }) => {
+  const { slug } = await params;
+  const caseStudy = CaseStudies[slug];
+  if (!caseStudy) notFound();
+
   return (
-    <section className="px-[100px] py-[50px] bg-[#1B1B1F]">
-      <div className="w-full h-screen bg-white relative">
-        <Link href="/">
-          <AiOutlineClose className="absolute top-5 right-5 text-3xl cursor-pointer" />
-        </Link>
-        <CaseHeader />
-      </div>
-    </section>
+    <main className="bg-[#0c0c0c] text-white font-interTight antialiased overflow-x-hidden">
+      <BackBar />
+      <CaseHero data={caseStudy.hero} />
+      <InfoStrip data={caseStudy.infoStrip} />
+      <CaseMetrics data={caseStudy.metrics} />
+      <CaseFeatures data={caseStudy.features} />
+      <CaseProcess data={caseStudy.process} />
+      <ScreensMarquee data={caseStudy.marquee} />
+      <CaseFooter data={caseStudy.footer} />
+    </main>
   );
 };
 
-export default CaseStudyDetails;
+export default CaseStudyPage;

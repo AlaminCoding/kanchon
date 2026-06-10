@@ -8,7 +8,7 @@ const Design = () => {
         backgroundImage: "linear-gradient(135deg, #9A6AFF 0%, #4F41F0 100%)",
       }}
     >
-      <Title title="Design" />
+      <Title title="4. Design" />
       <svg
         width="85"
         height="74"

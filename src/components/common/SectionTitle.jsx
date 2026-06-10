@@ -1,6 +1,13 @@
-const SectionTitle = ({ title }) => {
+import { cn } from "@/lib/utils";
+
+const SectionTitle = ({ title, className }) => {
   return (
-    <h3 className="text-white/50 tracking-[3px] font-thin text-[18px] font-inter uppercase">
+    <h3
+      className={cn(
+        "text-white text-[32px] lg:text-[44px] font-interTight leading-[130%]",
+        className,
+      )}
+    >
       {title}
     </h3>
   );

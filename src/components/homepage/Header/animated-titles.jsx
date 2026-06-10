@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const AnimatedTitles = ({ titles, className }) => {
   if (titles.length === 0) {
@@ -18,6 +18,21 @@ const AnimatedTitles = ({ titles, className }) => {
   const titleWrapperRef = useRef(null);
   const plusRef = useRef(null);
   const [plusLeft, setPlusLeft] = useState(0);
+  // bumped on resize (debounced) so the animation re-measures and rebuilds
+  const [resizeTick, setResizeTick] = useState(0);
+
+  useEffect(() => {
+    let timeout;
+    const onResize = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setResizeTick((tick) => tick + 1), 200);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
 
   useGSAP(
     () => {
@@ -51,7 +66,7 @@ const AnimatedTitles = ({ titles, className }) => {
         });
       }
     },
-    { dependencies: [titles.length] },
+    { dependencies: [titles.length, resizeTick], revertOnUpdate: true },
   );
 
   return (
@@ -69,7 +84,7 @@ const AnimatedTitles = ({ titles, className }) => {
       </div>
       <span
         className={cn(
-          "absolute top-[50%] -translate-y-1/2 transition-all duration-1000 font-[300]",
+          "absolute top-[60%] -translate-y-1/2 transition-all duration-1000",
           plusLeft === 0 && "hidden",
         )}
         style={{
