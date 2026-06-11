@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const CaseFooter = ({ data }) => {
   return (
-    <div className="max-w-[1000px] mx-auto">
-      <footer className="flex items-center justify-between max-[560px]:flex-col max-[560px]:items-start max-[560px]:gap-6 py-20 px-12 max-[560px]:px-6 max-[560px]:py-[60px] border-t border-white/5">
+    <div className="case-container">
+      <footer className="flex items-center justify-between max-[560px]:flex-col max-[560px]:items-start max-[560px]:gap-6 py-20 max-[560px]:py-[60px] border-t border-white/5">
         <p className="font-jetbrains text-[10px] font-bold tracking-[0.12em] uppercase text-white/20">
           {data.label}
         </p>

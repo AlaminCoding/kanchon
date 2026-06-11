@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +18,7 @@ const CaseFeatures = ({ data }) => {
     () => {
       // pin the phone wrap only on desktop — on mobile the phone stacks below
       const mm = gsap.matchMedia();
-      mm.add("(min-width: 901px)", () => {
+      mm.add("(min-width: 768px)", () => {
         ScrollTrigger.create({
           trigger: scope.current,
           start: "top 58px",
@@ -57,15 +58,15 @@ const CaseFeatures = ({ data }) => {
     <section className="bg-[#111]">
       <div
         ref={scope}
-        className="max-w-[900px] mx-auto grid grid-cols-[1fr_480px] relative"
+        className="case-container grid md:grid-cols-[1fr_480px] relative"
       >
         {/* LEFT — scrolling feature copy */}
-        <div className="pt-[100px] pb-[300px] max-[900px]:pb-16">
+        <div className="py-[50px] md:pt-[100px] md:pb-[300px]">
           <p className="font-jetbrains text-[10px] font-bold tracking-[0.14em] uppercase text-white/30 mb-4">
             {data.eyebrow}
           </p>
 
-          <h2 className="text-[36px] font-extrabold tracking-[-0.02em] leading-[1.1] text-white mb-20">
+          <h2 className="text-[36px] font-extrabold tracking-[-0.02em] leading-[1.1] text-white mb-[50px] md:mb-20">
             {data.title.map((line, i) => (
               <span key={i} className="block">
                 {line}
@@ -76,7 +77,7 @@ const CaseFeatures = ({ data }) => {
           {data.items.map((f) => (
             <div
               key={f.number}
-              className="feature-item py-[88px] max-[900px]:py-12 border-t border-white/5 last:border-b"
+              className="feature-item py-10 md:py-[88px] border-t border-white/5 md:last:border-b"
             >
               <p className="font-jetbrains text-[11px] font-semibold tracking-[0.1em] text-white/20 mb-4">
                 {f.number}
@@ -87,12 +88,35 @@ const CaseFeatures = ({ data }) => {
               <p className="text-[15px] leading-[1.65] text-white/45 max-w-[400px]">
                 {f.desc}
               </p>
+              <div className="relative w-[270px] h-[550px] mx-auto rounded-[20px] bg-[#1a1a1a] overflow-hidden border-[3px] border-white mt-10 md:hidden">
+                <div className="absolute top-5 left-1/2 w-20 h-5 bg-black rounded-full z-10 -translate-x-1/2" />
+                {f.screen.type === "video" ? (
+                  <video
+                    key={f.number}
+                    src={f.screen.src}
+                    autoPlay
+                    muted
+                    playsInline
+                    loop
+                    className="absolute inset-0 w-full h-full object-cover rounded-[20px] transition-opacity duration-500 ease-[cubic-bezier(.16,1,.3,1)]"
+                  />
+                ) : (
+                  <Image
+                    key={f.number}
+                    src={f.screen.src}
+                    width={410}
+                    height={450}
+                    alt={f.name}
+                    className="absolute inset-0 w-full h-full object-cover rounded-[20px] transition-opacity duration-500 ease-[cubic-bezier(.16,1,.3,1)]"
+                  />
+                )}
+              </div>
             </div>
           ))}
         </div>
 
         {/* RIGHT — pinned phone */}
-        <div className="relative">
+        <div className="relative max-md:hidden">
           <div ref={pinRef} className="h-screen flex items-center justify-end">
             <div className="relative w-[272px] h-[556px] rounded-[44px] bg-[#1a1a1a] overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_40px_80px_rgba(0,0,0,0.6),0_0_0_8px_#222,0_0_0_9px_rgba(255,255,255,0.04)] before:content-[''] before:absolute before:top-2.5 before:left-1/2 before:-translate-x-1/2 before:w-[72px] before:h-[22px] before:bg-black before:rounded-xl before:z-10">
               {data.items.map((f, i) => {

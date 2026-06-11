@@ -32,7 +32,7 @@ const AnimatedParagraph = ({ text, className }) => {
   return (
     <p
       className={cn(
-        "text-sm lg:text-[19px] font-[300] leading-[160%] text-white/70 mt-[60px] font-interTight max-w-[650px]",
+        "text-sm lg:text-[19px] font-[300] leading-[160%] text-white/70 font-interTight max-w-[650px]",
         className,
       )}
       ref={paraRef}

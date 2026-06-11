@@ -4,7 +4,7 @@ const SectionTitle = ({ title, className }) => {
   return (
     <h3
       className={cn(
-        "text-white text-[32px] lg:text-[44px] font-interTight leading-[130%]",
+        "text-white text-[26px] sm:text-[32px] lg:text-[44px] font-interTight leading-[130%]",
         className,
       )}
     >

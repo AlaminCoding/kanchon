@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-/* Arrow link — mono uppercase label with a diagonal arrow that nudges
-   up-right on hover. */
 const ArrowLink = ({ children, href = "#", className = "" }) => {
   return (
     <Link

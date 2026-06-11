@@ -2,9 +2,9 @@ import Reveal from "@/components/common/Reveal";
 
 const CaseProcess = ({ data }) => {
   return (
-    <section className="py-[120px] max-[900px]:py-20">
-      <div className="max-w-[1000px] mx-auto px-12 max-[900px]:px-6">
-        <div className="mb-16">
+    <section className="pt-[50px] pb-5 md:py-[120px]">
+      <div className="case-container">
+        <div className="mb-10 md:mb-16">
           <Reveal>
             <p className="font-jetbrains text-[10px] font-bold tracking-[0.14em] uppercase text-white/30 mb-5">
               {data.label}
@@ -19,7 +19,7 @@ const CaseProcess = ({ data }) => {
 
         {data.steps.map((step) => (
           <Reveal key={step.num}>
-            <div className="grid grid-cols-[56px_1fr] max-[560px]:grid-cols-[40px_1fr] gap-8 max-[560px]:gap-4 py-9 border-t border-white/5 last:border-b items-start">
+            <div className="grid grid-cols-[56px_1fr] max-[560px]:grid-cols-[40px_1fr] gap-8 max-[560px]:gap-4 py-9 border-t border-white/5 md:last:border-b items-start">
               <p className="font-jetbrains text-[11px] font-bold text-white/20 tracking-[0.08em] pt-1">
                 {step.num}
               </p>

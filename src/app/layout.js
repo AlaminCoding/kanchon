@@ -43,7 +43,7 @@ const Instrument = Instrument_Serif({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${RebondFont.variable} ${SourceSansFont.variable} ${JakartaSansFont.variable} ${MeowFont.variable} ${JetBrains.variable} ${InterTight.variable} ${Instrument.variable}`}
       >

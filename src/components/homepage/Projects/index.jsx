@@ -4,9 +4,9 @@ import WorkCard from "./WorkCard";
 
 const Projects = () => {
   return (
-    <section className="pt-[120px]" id="case-studies">
+    <section className="pt-[50px] sm:pt-[120px]" id="case-studies">
       <ProjectHeader />
-      <div className="mt-[80px]">
+      <div className="sm:mt-[80px]">
         {WorkList.map((item) => {
           return <WorkCard key={item.id} item={item} />;
         })}

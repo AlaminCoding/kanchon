@@ -18,7 +18,7 @@ const BackBar = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[100] px-12 max-[900px]:px-6 py-5 max-[900px]:py-4 flex items-center backdrop-blur-[12px]"
+      className="fixed top-0 left-0 right-0 z-[100] px-12 max-[900px]:px-5 py-5 max-[900px]:py-4 flex items-center backdrop-blur-[12px]"
       style={{ background: `rgba(12,12,12,${opacity})` }}
     >
       <Link

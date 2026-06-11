@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const hoverImgs = ["/archive-mock-a.webp", "/archive-mock-b.jpg"];
 // deterministic pseudo-random pick per card so order looks scattered but stable on reload
@@ -12,15 +13,16 @@ const ArchiveCard = ({ project, index, total }) => {
   return (
     <article
       className={cn(
-        "group relative overflow-hidden aspect-[3/4] transition-colors duration-[400ms] hover:bg-black",
-        col < 2 && "border-r border-white/10",
-        row < lastRow && "border-b border-white/10",
+        "group relative overflow-hidden w-full h-[250px] sm:h-[350px] transition-colors duration-[400ms] hover:bg-black max-sm:rounded-md max-sm:border border-white/10",
+        col < 2 && "sm:border-r border-white/10",
+        row < lastRow && "sm:border-b border-white/10",
       )}
     >
+      <div className="absolute top-0 left-0 w-full h-full bg-black/90 z-[1]" />
       {/* full-bleed mockup — fades/zooms in on hover */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 overflow-hidden pointer-events-none opacity-0 scale-[1.06] [transition:opacity_.5s_cubic-bezier(.2,.7,.2,1),transform_.8s_cubic-bezier(.2,.7,.2,1)] group-hover:opacity-100 group-hover:scale-100"
+        className="absolute inset-0 overflow-hidden pointer-events-none opacity-100 lg:opacity-0 scale-[1.06] [transition:opacity_.5s_cubic-bezier(.2,.7,.2,1),transform_.8s_cubic-bezier(.2,.7,.2,1)] lg:group-hover:opacity-100 lg:group-hover:scale-100"
       >
         <img
           src={pickImg(index)}
@@ -32,7 +34,7 @@ const ArchiveCard = ({ project, index, total }) => {
       </div>
 
       {/* content — fades out as the mockup takes over */}
-      <div className="relative z-[2] h-full flex flex-col p-7 pb-[26px] transition-opacity duration-[450ms] ease-[cubic-bezier(.2,.7,.2,1)] group-hover:opacity-0 group-hover:pointer-events-none">
+      <div className="relative z-[2] h-full flex flex-col p-7 pb-[26px] transition-opacity duration-[450ms] ease-[cubic-bezier(.2,.7,.2,1)] lg:group-hover:opacity-0 group-hover:pointer-events-none justify-between">
         <div>
           <h3 className="font-interTight font-semibold text-[20px] lg:text-[26px] leading-[1.15] tracking-[-0.015em] text-white">
             {project.title}
@@ -42,7 +44,7 @@ const ArchiveCard = ({ project, index, total }) => {
           </p>
         </div>
 
-        <div className="mt-auto flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag, i) => (
             <span
               key={i}

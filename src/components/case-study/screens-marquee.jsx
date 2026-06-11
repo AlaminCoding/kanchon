@@ -25,13 +25,13 @@ const PhoneSet = ({ screens, ariaHidden = false }) => (
 const ScreensMarquee = ({ data }) => {
   return (
     <section
-      className="group relative py-[120px] pb-[140px] max-[760px]:py-20 border-t border-white/5 overflow-hidden"
+      className="group relative py-[50px] md:py-[120px] border-t border-white/5 overflow-hidden"
       style={{
         background:
           "radial-gradient(1200px 480px at 50% 0%, rgba(74,222,128,0.05), transparent 70%), #0c0c0c",
       }}
     >
-      <div className="max-w-[1000px] mx-auto px-12 max-[760px]:px-6 mb-[72px] max-[760px]:mb-12">
+      <div className="case-container md:mb-[72px] mb-12">
         <Reveal>
           <div className="max-w-[640px]">
             <p className="font-jetbrains text-[11px] tracking-[0.18em] uppercase text-[#4ADE80] font-semibold mb-[18px]">

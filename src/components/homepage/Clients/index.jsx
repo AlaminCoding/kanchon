@@ -18,7 +18,7 @@ const Clients = () => {
   return (
     <section className="py-7 border-y-[0.5px] border-white/20">
       <div className="home-container flex items-center">
-        <p className="font-jetbrains text-[11px] text-white/60 uppercase w-[150px] shrink-0 tracking-widest">
+        <p className="font-jetbrains text-[11px] text-white/60 uppercase w-[100px] sm:w-[150px] shrink-0 tracking-widest">
           Trusted by
         </p>
         <div
@@ -34,10 +34,10 @@ const Clients = () => {
             {list.map((client, index) => (
               <span
                 key={index}
-                className="inline-block px-[18px] font-jetbrains text-[13px] uppercase tracking-[0.06em] text-white"
+                className="inline-block px-1 sm:px-[18px] font-jetbrains text-[13px] uppercase tracking-[0.06em] text-white"
               >
                 {client}
-                <span className="text-white/30 ml-[18px]">／</span>
+                <span className="text-white/30 ml-2 sm:ml-[18px]">／</span>
               </span>
             ))}
           </div>

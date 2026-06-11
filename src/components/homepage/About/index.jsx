@@ -7,10 +7,13 @@ import SectionText from "@/components/common/SectionText";
 const About = () => {
   const { title, lede, timeline, recognition, toolkit } = AboutData;
   return (
-    <section id="about" className="py-[120px] border-t border-white/10">
+    <section
+      id="about"
+      className="py-[50px] sm:py-[120px] border-t border-white/10"
+    >
       {/* section header */}
-      <div className="flex items-start pb-7 border-b border-white/10 mb-14">
-        <SectionLeftTitle title="About" className="mt-2" />
+      <div className="flex sm:flex-row flex-col sm:gap-0 gap-5 items-start pb-7 border-b border-white/10 mb-7 sm:mb-14">
+        <SectionLeftTitle title="About" className="sm:mt-2" />
         <div className="space-y-5">
           <SectionTitle title={title} className="max-w-[500px]" />
           <SectionText text={lede} className="max-w-[58ch]" />
@@ -19,8 +22,11 @@ const About = () => {
 
       {/* body — track record | recognition + toolkit */}
       <div className="flex items-start">
-        <div className="w-[100px] xl:w-[180px] shrink-0" aria-hidden="true" />
-        <div className="flex-1 grid grid-cols-2 max-[820px]:grid-cols-1 gap-10 items-start">
+        <div
+          className="w-[100px] xl:w-[180px] shrink-0 sm:block hidden"
+          aria-hidden="true"
+        />
+        <div className="flex-1 grid lg:grid-cols-2 grid-cols-1 gap-7 sm:gap-10 items-start">
           {/* track record */}
           <div>
             <p className="font-jetbrains text-[11px] text-white/60 tracking-[0.14em] uppercase mb-5">
@@ -60,7 +66,7 @@ const About = () => {
                 <div
                   key={i}
                   className={cn(
-                    "grid grid-cols-[60px_1fr] gap-4 py-5 border-t",
+                    "grid grid-cols-[100px_1fr] lg:grid-cols-[60px_1fr] gap-4 py-5 border-t",
                     i === 0 ? "border-white" : "border-white/10",
                   )}
                 >

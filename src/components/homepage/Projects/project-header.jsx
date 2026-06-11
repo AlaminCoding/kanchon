@@ -5,8 +5,8 @@ import React from "react";
 
 const ProjectHeader = () => {
   return (
-    <div className="flex items-start">
-      <SectionLeftTitle title="Selected Work" className={"mt-2"} />
+    <div className="flex sm:flex-row flex-col sm:gap-0 gap-5 items-start">
+      <SectionLeftTitle title="Selected Work" className={"sm:mt-2"} />
       <div className="space-y-5">
         <SectionTitle
           title="Four engagements. Measurable outcomes."

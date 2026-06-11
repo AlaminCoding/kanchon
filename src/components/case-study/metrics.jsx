@@ -2,10 +2,10 @@ import Reveal from "@/components/common/Reveal";
 
 const CaseMetrics = ({ data }) => {
   return (
-    <section className="py-[120px]">
-      <div className="max-w-[900px] mx-auto">
+    <section className="py-[50px] md:py-[100px]">
+      <div className="case-container">
         <Reveal>
-          <div className="mb-16 max-w-[720px]">
+          <div className="mb-7 md:mb-16 max-w-[720px]">
             <h3 className="text-[clamp(32px,4.5vw,56px)] font-bold tracking-[-0.02em] leading-[1.05] text-white">
               {data.title}
             </h3>
@@ -14,7 +14,7 @@ const CaseMetrics = ({ data }) => {
             </p>
           </div>
         </Reveal>
-        <div className="grid grid-cols-3 max-[900px]:grid-cols-1 gap-12 max-[900px]:gap-7">
+        <div className="grid md:grid-cols-3 grid-cols-1 md:gap-12 gap-7">
           {data.items.map((m, i) => (
             <Reveal key={m.label} delay={i * 90}>
               <div className="flex flex-col gap-3.5 border-t border-white/10 pt-7">

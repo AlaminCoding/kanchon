@@ -1,6 +1,6 @@
 import DynamicImage from "./dynamic-image";
 import Menu from "./menu";
-import SidebarFooter from "./sidebar-footer";
+import SocialFooter from "./social-footer";
 
 const SidebarInfo = () => {
   return (
@@ -16,7 +16,7 @@ const SidebarInfo = () => {
 
       <Menu />
 
-      <SidebarFooter />
+      <SocialFooter />
     </aside>
   );
 };

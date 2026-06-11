@@ -1,4 +1,5 @@
 import SectionLeftTitle from "@/components/common/SectionLeftTitle";
+import MainButton from "@/components/common/main-button";
 import { cn } from "@/lib/utils";
 
 const EMAIL = "kanchonsk26@gmail.com";
@@ -16,12 +17,12 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="pt-[140px] pb-[120px] border-t border-white/10"
+      className="pt-[50px] sm:pt-[140px] pb-[50px] sm:pb-[120px] border-t border-white/10"
     >
-      <div className="flex items-start">
-        <SectionLeftTitle title="Contact" className="mt-2" />
-        <div className="flex-1">
-          <h2 className="mb-10 font-interTight font-light text-[55px] lg:text-[88px] leading-[110%] max-w-[17ch] text-white/80">
+      <div className="flex sm:flex-row flex-col sm:gap-0 gap-5 items-start">
+        <SectionLeftTitle title="Contact" className="sm:mt-4" />
+        <div className="flex-1 w-full">
+          <h2 className="mb-10 font-interTight font-light text-[40px] sm:text-[55px] lg:text-[88px] leading-[110%] max-w-[17ch] text-white/80">
             If the brief involves ambiguity,{" "}
             <em className="font-instrument italic font-normal text-white">
               we should probably talk.
@@ -65,26 +66,20 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="mt-10 flex gap-3.5">
-            <a
-              href={`mailto:${EMAIL}`}
-              className={cn(
-                btnBase,
-                "bg-white text-black before:bg-black hover:text-white hover:shadow-[0_10px_24px_-12px_rgba(0,0,0,0.28)]",
-              )}
-            >
-              Start a conversation →
-            </a>
-            <a
-              href="/Kanchon_Sarker_Resume.pdf"
-              download
-              className={cn(
-                btnBase,
-                "bg-transparent text-white border border-white before:bg-white hover:text-black",
-              )}
-            >
-              Download CV ↓
-            </a>
+          <div className="mt-10 flex gap-3.5 w-full min-[420px]:flex-row flex-col">
+            <MainButton
+              title="Start a conversation →"
+              link={`mailto:${EMAIL}`}
+              variant="white"
+              className="sm:w-fit w-full"
+            />
+            <MainButton
+              title="Download CV ↓"
+              link="/Kanchon_Sarker_Resume.pdf"
+              variant="black"
+              download={true}
+              className="sm:w-fit w-full"
+            />
           </div>
         </div>
       </div>

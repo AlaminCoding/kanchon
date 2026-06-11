@@ -102,20 +102,25 @@ const steps = [
 const Methodology = () => {
   return (
     <section
-      className="py-[90px] pb-[110px] border-b-[0.5px] border-white/20 overflow-hidden"
+      className="py-[50px] sm:py-[90px] sm:pb-[110px] border-b-[0.5px] border-white/20 overflow-hidden"
       id="methodology"
     >
       <div className="home-container">
-        <div className="flex items-start">
-          <SectionLeftTitle title={"Methodology I Follow"} className="mt-7" />
-          <div className="flex-1">
+        <div className="flex sm:flex-row flex-col items-start">
+          <SectionLeftTitle
+            title={"Methodology I Follow"}
+            className="sm:mt-7"
+          />
+          <div className="flex-1 sm:mt-0 mt-3">
             <div className="grid grid-cols-3 xl:grid-cols-5 gap-4 items-start">
               {steps.map((s, i) => (
                 <div
                   key={i}
-                  className="relative flex flex-col items-center gap-5 method-step"
+                  className="relative flex flex-col items-center gap-2 sm:gap-5 method-step"
                 >
-                  <div className="method-icon">{s.svg}</div>
+                  <div className="method-icon sm:w-[148px] sm:h-[148px] max-w-[100%]">
+                    {s.svg}
+                  </div>
                   <div className="flex flex-col items-center gap-1.5 font-jetbrains">
                     <div className="flex items-center gap-2">
                       <span className="text-[10px] text-white/40 tracking-[0.14em] uppercase">
@@ -136,7 +141,7 @@ const Methodology = () => {
         </div>
 
         <style>{`
-        .method-icon{width:148px;height:148px;max-width:100%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0.55;transition:opacity .4s ease, transform .45s cubic-bezier(.2,.8,.2,1);}
+        .method-icon{display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0.55;transition:opacity .4s ease, transform .45s cubic-bezier(.2,.8,.2,1);}
         .method-step:hover .method-icon{opacity:1;transform:translateY(-2px);}
         .method-step:hover .method-label{color:#fff;}
         .method-step:hover .method-note{color:rgba(255,255,255,0.65);}

@@ -5,10 +5,10 @@ import Behance from "@/components/icons/Behance";
 import Linkedin from "@/components/icons/Linkedin";
 import DhakaTime from "./dhaka-time";
 
-const SidebarFooter = () => {
+const SocialFooter = ({ showTime = true }) => {
   return (
     <div className="space-y-5">
-      <DhakaTime />
+      {showTime && <DhakaTime />}
 
       <div className="flex text-[18px] justify-between items-center">
         <a href="#">
@@ -28,4 +28,4 @@ const SidebarFooter = () => {
   );
 };
 
-export default SidebarFooter;
+export default SocialFooter;
