@@ -99,11 +99,68 @@ module.exports = {
           // -50% minus half the 36px gap between the two sets, for a seamless loop
           to: { transform: "translate3d(calc(-50% - 18px),0,0)" },
         },
+        /* sidebar brand swap — base image blurs out while the portrait
+           wipes in from the top, then reverses */
+        "ks-img-a": {
+          "0%, 60%, 96%, 100%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "blur(0)",
+            clipPath: "inset(0)",
+          },
+          "66%": { opacity: "1", transform: "scale(0.985)", filter: "blur(2px)" },
+          "72%, 88%": { opacity: "0", transform: "scale(0.94)", filter: "blur(8px)" },
+          "94%": { opacity: "1", transform: "scale(0.985)", filter: "blur(2px)" },
+        },
+        "ks-img-b": {
+          "0%, 60%": {
+            opacity: "0",
+            transform: "scale(1.06)",
+            filter: "grayscale(1) blur(8px)",
+            clipPath: "inset(0 0 100% 0)",
+          },
+          "66%": {
+            opacity: "0.6",
+            transform: "scale(1.03)",
+            filter: "grayscale(1) blur(4px)",
+            clipPath: "inset(0 0 50% 0)",
+          },
+          "72%, 88%": {
+            opacity: "1",
+            transform: "scale(1)",
+            filter: "grayscale(1) blur(0)",
+            clipPath: "inset(0)",
+          },
+          "94%": {
+            opacity: "0.6",
+            transform: "scale(1.03)",
+            filter: "grayscale(1) blur(4px)",
+            clipPath: "inset(50% 0 0 0)",
+          },
+          "96%, 100%": {
+            opacity: "0",
+            transform: "scale(1.06)",
+            filter: "grayscale(1) blur(8px)",
+            clipPath: "inset(100% 0 0 0)",
+          },
+        },
+        /* diagonal gloss flash at each swap moment */
+        "ks-sweep": {
+          "0%, 60%": { opacity: "0", transform: "translateX(-130%)" },
+          "64%": { opacity: "1", transform: "translateX(-40%)" },
+          "72%": { opacity: "0", transform: "translateX(130%)" },
+          "88%": { opacity: "0", transform: "translateX(-130%)" },
+          "92%": { opacity: "1", transform: "translateX(40%)" },
+          "96%, 100%": { opacity: "0", transform: "translateX(130%)" },
+        },
       },
       animation: {
         "scale-pulse": "scale-pulse 1.5s ease-in-out infinite",
         marquee: "marquee 42s linear infinite",
         "marquee-screens": "marquee-screens 50s linear infinite",
+        "ks-img-a": "ks-img-a 8s cubic-bezier(0.7,0,0.3,1) infinite",
+        "ks-img-b": "ks-img-b 8s cubic-bezier(0.7,0,0.3,1) infinite",
+        "ks-sweep": "ks-sweep 8s cubic-bezier(0.7,0,0.3,1) infinite",
       },
     },
   },

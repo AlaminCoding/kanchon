@@ -20,8 +20,12 @@ const AnimatedParagraph = ({ text, className }) => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: paraRef.current,
-          start: "top 80%",
-          end: "top 40%",
+          start: () => {
+            const el = paraRef.current;
+            const offsetTop = el.getBoundingClientRect().top + window.scrollY;
+            return `top ${offsetTop}px`;
+          },
+          end: `+=${paraRef.current.offsetHeight}px`,
           scrub: true,
         },
       });
